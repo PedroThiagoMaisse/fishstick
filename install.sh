@@ -30,3 +30,10 @@ if ! grep -q "$INSTALL_DIR" "$BASHRC"; then
 else
     echo "$INSTALL_DIR is already in your PATH."
 fi
+
+
+
+# Running config install
+cd ./config/ || exit
+chmod +x ./install.sh
+./install.sh
