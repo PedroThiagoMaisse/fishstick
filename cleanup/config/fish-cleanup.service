@@ -5,6 +5,6 @@ Description=My Weekly Automation Script
 Type=oneshot
 User=root
 Group=root
-ExecStart=/home/usr/.local/bin/kog/cleanup.sh
+ExecStart=/home/#usr/.local/bin/fishstick/cleanup.sh
 StandardOutput=journal
 StandardError=journal

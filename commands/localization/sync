@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ENV_FILE="$HOME/.config/system-vars/vars.env"
+ENV_FILE="$HOME/.config/fishstick/.env"
 
 update_variable() {
     local KEY=$1
