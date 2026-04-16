@@ -1,8 +1,8 @@
 [Unit]
-Description=Run weekly-script.service every Monday at midnight
+Description=Run fish-cleanup.service every day at 6:00
 
 [Timer]
-OnCalendar=weekly
+OnCalendar=*-*-* 06:00:00
 Persistent=true
 
 [Install]

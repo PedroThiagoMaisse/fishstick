@@ -105,7 +105,7 @@ echo ""
 echo "3 - Executing cleanup install.sh"
 
 cd ./cleanup || exit
-./install.sh
+sudo ./install.sh
 
 
 echo "3 - Complete!"

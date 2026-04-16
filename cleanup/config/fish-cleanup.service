@@ -1,5 +1,5 @@
 [Unit]
-Description=My Weekly Automation Script
+Description=My Daily Automation Script
 
 [Service]
 Type=oneshot
