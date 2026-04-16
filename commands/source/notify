@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ICON=${ICON:-"dialog-information"}
+TIMEOUT=${TIMEOUT:-4000}
+
+notify-send -t "$TIMEOUT" -i "$ICON" "$1" "$2"

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run weekly-script.service every Monday at midnight
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

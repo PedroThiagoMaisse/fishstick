@@ -1,0 +1,10 @@
+[Unit]
+Description=My Weekly Automation Script
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/home/usr/.local/bin/kog/cleanup.sh
+StandardOutput=journal
+StandardError=journal
