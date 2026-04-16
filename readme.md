@@ -19,8 +19,11 @@ with time, the ideia is to create a more generic, that can be easily used on any
 ### Public release:
 - ~~Unify and organize status into commands~~
 - ~~Modify my config, so it pulls files from a generic place~~
-- Pull the config to git
+- ~~Pull the config to git~~
 - Create / Revise a install.sh for commands, configs and cleanup
+    - Add the creation of a generic env file
+    - Moving the wallpaper to the right spot (and call it on hyprlock)
+    - make backups of old configs
 - Revise cleanup rule
 - Revise the code
 - Revise .md

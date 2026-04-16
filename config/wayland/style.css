@@ -1,0 +1,199 @@
+* {
+    font-family: "Noto Sans Regular", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0);
+    color: #d4be98;
+    border-radius: 8px;
+    transition-property: opacity;
+    transition-duration: .5s;
+    margin: 0px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+.module,
+#window {
+    min-height: 16px;
+    background-color: rgba(29, 32, 33, 0.8);
+    border-radius: 8px;
+    padding: 2px 10px;
+    color: #d4be98;
+    margin: 2px 4px;
+    transition-property:background-color;
+    transition-duration: 0.25s;
+}
+
+.module:hover ,
+#window:hover {
+	background: rgba(29, 32, 33, 0.6);
+}
+
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -4px #444;
+}
+
+#workspaces {
+    padding: 0px 0px;
+    margin: 2px;
+    font-weight: bolder;
+}
+#workspaces:hover {
+    background-color: rgba(29, 32, 33, 0.8);
+}
+
+#workspaces button {
+    background-color: rgba(29, 32, 33, 0.8);
+    padding: 0px 4px;
+    font-size: 8px;
+    border-radius: 8px;
+    margin: 4px;
+    color: #d4be98;
+    transition-property:background-color;
+    transition-duration: 0.25s;
+}
+
+/*#workspaces button:hover {
+    color: #ffffff; 
+}*/
+
+#workspaces button.active {
+    background-color: rgba(30, 30, 42, 0.5);
+    color: #d4be98;
+}
+
+#workspaces button.urgent {
+    /*background:linear-gradient(to right, rgba(200, 130, 130, 0.8 ), rgba(250, 230, 230, 0.8));*/
+    border: 1px solid #dd7777;
+    color: #d4be98;
+}
+
+
+#workspaces button.visible {
+    background: #d4be98;
+    color: rgba(29, 32, 33, 0.8);
+}
+
+#window {
+    padding: 4px 12px;
+}
+
+#cpu{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin: 2px 0px;
+}
+
+#memory {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: 0px;
+    margin: 2px 0px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+@keyframes blink {
+    to {
+        background-color: #fff;
+        color: #222000;
+    }
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+
+#custom-power:hover {
+    background: rgba(80, 40, 40, 1.0);	
+}
+
+#custom-media {
+    background: #d4be98;
+    color: rgba(29, 32, 33, 0.8);
+}
+
+#custom-dunst {
+    min-width: 12px;
+}
+
+.dnd {
+    padding-left: 9px;
+    padding-right: 11px;
+    background: #d4be98;
+    color: rgba(29, 32, 33, 0.8);
+}
+
+.dnd:hover {
+    background: #d4be98;
+    box-shadow: inset 0 -4px #444;
+}
+
+#pulseaudio.audio.muted {
+    background: #d4be98;
+    color: #212121;
+    padding-left: 9px;
+    padding-right: 11px;
+}
+
+#pulseaudio.microphone, #network, #bluetooth, #custom-ask {
+    background: #d4be98;
+    color: #212121;
+}
+
+#custom-ask {
+    font-weight: 600;
+}
+
+
+
+#pulseaudio.microphone.source-muted {
+    background: rgba(29, 32, 33, 0.8);
+    color: #d4be98;
+}
+
+#battery {
+    color: #212121;
+}
+
+#battery.full, #battery.good, #network.ethernet, #bluetooth.connected{
+    background: #98971a;
+}
+
+#battery.warning, #network.disconnected {
+    background: #d79921;
+}
+
+#battery.critical, #network.disabled, #bluetooth.disabled, #bluetooth.off {
+    background: #cc241d;
+}
+
+#backlight {
+    padding-right: 14px;
+}

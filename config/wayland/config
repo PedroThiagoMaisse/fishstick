@@ -1,0 +1,171 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "height": 32,
+    "width": 1920,
+    "margin": 0,
+    "padding": 0,
+
+    "modules-left": [
+	    "custom/dunst",
+        "hyprland/workspaces",
+        "tray",
+    ],
+    "modules-center": [
+	    "custom/media",
+        "hyprland/window",
+    ],
+    "modules-right": [
+        "custom/ask",
+        "custom/weather",
+        "backlight",
+        "pulseaudio#audio",    
+        "pulseaudio#microphone",
+        "network",
+        "bluetooth",
+        "battery",
+        "cpu",
+        "memory",
+        "clock",
+        "custom/power",
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "hyprland/window": {
+        "max-length": 12, 
+        "rewrite": {
+        "(.*) — Zen Browser": "Zen Browser",
+        "(.*) - Code - OSS": "Code"
+        }
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%a %d-%m-%Y}"
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪 ",
+        "format-disabled": "󰖪 ",
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "bash -c 'if [ \"$(nmcli radio wifi)\" == \"enabled\" ]; then nmcli radio wifi off; else nmcli radio wifi on; fi'"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-disabled": "󰂲",
+        "on-click": "ghostty -e bluetui",
+        "tooltip-format": "{status}"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "ghostty -e htop"
+    },
+
+    "memory": {
+        "format": "{}% ",
+        "on-click": "ghostty -e htop"
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "󰃠",
+        "tooltip": true,
+        "format-alt": "󰃠  {percent}%",
+        "tooltip-format": "{percent}%",
+        "on-scroll-up": "brightnessctl set 10%+",
+        "on-scroll-down": "brightnessctl set 10%- -n 10%", 
+    },
+
+    "battery": {
+        "states": {
+            "good": 100,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{icon}   {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "pulseaudio#audio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": ["", "  ", "  "]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +10%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -10%",
+        "on-click-right": "pavucontrol",
+        "tooltip": true
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": " ",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+
+    "custom/ask": {
+        "on-click": "zen-browser  --private-window \"file:////var/fishstick/helper.html\"",
+        "format": "?"
+    },
+
+
+    "custom/media": {
+    	"exec": "media.media-details.listener",
+    	"return-type": "json",
+    	"tooltip": false,
+        "escape": true,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+    },
+
+    "custom/dunst": {
+    	"exec": "notify.muted.static",
+    	"on-click": "notify.muted.set",
+        "signal": 1,
+        "escape": true,
+    	"return-type": "json",
+    	"tooltip": true
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "nwg-bar"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "weather.sync -wb",
+        "on-click": "weather.sync; pkill -RTMIN+8 waybar",
+        "signal": 8
+    }
+}
