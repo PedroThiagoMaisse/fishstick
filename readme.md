@@ -17,7 +17,7 @@ with time, the ideia is to create a more generic, that can be easily used on any
 ## Next steps
 
 ### Public release:
-- Unify and organize status into commands
+- ~~Unify and organize status into commands~~
 - Modify my config, so it pulls files from a generic place
 - Pull the config to git
 - Create a install.sh for commands, configs and cleanup
