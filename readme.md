@@ -2,7 +2,7 @@
 
 ## Summary
 
-A bunch of trash/mild usable customizations and scripts for arch (btw)
+A bunch of "trash"/somewhat usable customizations and scripts for arch (btw)
 
 Current the setup used (and only one tested) is:
 - Arch
@@ -12,7 +12,9 @@ Current the setup used (and only one tested) is:
 - waybar
 - dunst
 
-with time, the ideia is to create a more generic project, that can be easily used on any linux system.
+Right now, the codebase is a mess, just a bunch of .sh barely working together, but it still holds and works greatly in my day to day.
+
+My next plans includes: changing from a bunch of .sh to binaries builded with go, abstracting (i know) most of the code, so it can easily be used in another setups, and denifing and following some code / architecture directives.
 
 ## Next steps
 
@@ -26,7 +28,7 @@ with time, the ideia is to create a more generic project, that can be easily use
     - ~~make backups of old configs~~
 - ~~Revise cleanup rule~~
 - ~~Revise the code~~
-- Revise .md
+- ~~Revise .md~~
 
 ### 1.0:
 - Create a install.sh that can build from GO
