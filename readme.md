@@ -2,7 +2,7 @@
 
 ## Summary
 
-A bunch of trash/midly usable customizations and scripts for arch (btw)
+A bunch of trash/mild usable customizations and scripts for arch (btw)
 
 Current the setup used (and only one tested) is:
 - Arch
@@ -12,7 +12,7 @@ Current the setup used (and only one tested) is:
 - waybar
 - dunst
 
-with time, the ideia is to create a more generic, that can be easily used on any linux system.
+with time, the ideia is to create a more generic project, that can be easily used on any linux system.
 
 ## Next steps
 
@@ -25,12 +25,16 @@ with time, the ideia is to create a more generic, that can be easily used on any
     - ~~Moving the wallpaper to the right spot (and call it on hyprlock)~~
     - ~~make backups of old configs~~
 - ~~Revise cleanup rule~~
-- Revise the code
+- ~~Revise the code~~
 - Revise .md
 
 ### 1.0:
 - Create a install.sh that can build from GO
 - Change Language
+- Add dunst configs
+- Add climate to lock screen
+- Revisit the methods of triggering the reloads / syncs
+- Create possibility of selecting what the person wants
 - Revise APIs choices
 - Create a roadmap focused on updating the commands so them can be called in any system
 - Create a dependency list

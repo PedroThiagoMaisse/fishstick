@@ -8,7 +8,7 @@ notify() {
     if command -v dunstify &> /dev/null; then
         # Use sudo to run as user and link to their specific DBUS path
         sudo -u "$REAL_USER" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$USER_ID"/bus \
-        dunstify -u critical -i "$CUSTOM_ICON" -a "System Maintenance" "$1" "$2"
+        dunstify -u critical -i "trash-can" -a "System Maintenance" "$1" "$2"
     fi
 }
 
