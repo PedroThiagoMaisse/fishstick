@@ -14,7 +14,7 @@ Current the setup used (and only one tested) is:
 
 Right now, the codebase is a mess, just a bunch of .sh barely working together, but it still holds and works greatly in my day to day.
 
-My next plans includes: changing from a bunch of .sh to binaries builded with go, abstracting (i know) most of the code, so it can easily be used in another setups, and denifing and following some code / architecture directives.
+My next plans includes: changing from a bunch of .sh to binaries builded with go, abstracting (i know) most of the code, so it can easily be used in another setups, and defining and following some code / architecture directives.
 
 ## Next steps
 
