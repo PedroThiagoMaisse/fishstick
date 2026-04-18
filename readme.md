@@ -31,7 +31,7 @@ My next plans includes: changing from a bunch of .sh to binaries builded with go
 - ~~Revise .md~~
 
 ### 1.0:
-- Create a install.sh that can build from GO
+- ~~Create a install.sh that can build from GO~~
 - Change Language
 - Add dunst configs
 - Add climate to lock screen

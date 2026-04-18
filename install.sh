@@ -80,8 +80,7 @@ rm -rf "$INSTALL_DIR"
 mkdir -p "$INSTALL_DIR"
 
 echo "  i: Installing files from $FILES_DIR into $INSTALL_DIR..."
-
-find "$FILES_DIR" -type f | while read -r file; do
+find "$FILES_DIR" -type f -name "*.sh" | while read -r file; do
     relative_path=${file#$FILES_DIR/}
     new_name=$(echo "$relative_path" | tr '/' '.')
     
@@ -90,6 +89,32 @@ find "$FILES_DIR" -type f | while read -r file; do
     chmod +x "$INSTALL_DIR/$new_name"
 done
 
+echo "2 - Complete!"
+echo ""
+
+
+echo "2.5 - Compiling Go Binary"
+
+if [ -f "go.mod" ]; then
+    echo "  i: Running go mod tidy..."
+    go mod tidy
+    
+    echo "  i: Building fishstick binary..."
+    # Build the current directory (.) into a binary named 'fishstick'
+    go build -o "$INSTALL_DIR/fishstick" .
+    
+    if [ $? -eq 0 ]; then
+        chmod +x "$INSTALL_DIR/fishstick"
+        echo "  i: Binary compiled and moved to $INSTALL_DIR/fishstick"
+    else
+        echo "  e: Go build failed!"
+        exit 1
+    fi
+else
+    echo "  w: No go.mod found, skipping compilation."
+fi
+
+# Ensure the PATH includes the directory where the binary lives
 if ! grep -q "$INSTALL_DIR" "$BASHRC"; then
     echo "  i: Adding $INSTALL_DIR to PATH in $BASHRC"
     echo '  i: export PATH="$PATH:'"$INSTALL_DIR"'"' >> "$BASHRC"
@@ -99,7 +124,7 @@ else
 fi
 
 
-echo "2 - Complete!"
+echo "2.5 - Complete!"
 echo ""
 
 echo "3 - Executing cleanup install.sh"
