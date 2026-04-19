@@ -32,10 +32,16 @@ My next plans includes: changing from a bunch of .sh to binaries builded with go
 
 ### 1.0:
 - ~~Create a install.sh that can build from GO~~
+- Revisit the methods of triggering the reloads / syncs
+- Create bases for d-bus integration
 - Change Language
+    - Change command languages
+    - Change config imports and languages
+    - Change cleanup
+    - Connect to dunst
+    - Connect to waybar
 - Add dunst configs
 - Add climate to lock screen
-- Revisit the methods of triggering the reloads / syncs
 - Create possibility of selecting what the person wants
 - Revise APIs choices
 - Create a roadmap focused on updating the commands so them can be called in any system

@@ -70,7 +70,7 @@ echo ""
 echo "2 - Setting Commands"
 
 
-FILES_DIR="commands"
+FILES_DIR="commands-old"
 
 mkdir -p "$HOME/.local/bin"
 
