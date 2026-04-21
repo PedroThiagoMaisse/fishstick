@@ -70,7 +70,7 @@ echo ""
 echo "2 - Setting Commands"
 
 
-FILES_DIR="commands-old"
+FILES_DIR="commands"
 
 mkdir -p "$HOME/.local/bin"
 
@@ -80,7 +80,7 @@ rm -rf "$INSTALL_DIR"
 mkdir -p "$INSTALL_DIR"
 
 echo "  i: Installing files from $FILES_DIR into $INSTALL_DIR..."
-find "$FILES_DIR" -type f -name "*.sh" | while read -r file; do
+find "$FILES_DIR" -type f| while read -r file; do
     relative_path=${file#$FILES_DIR/}
     new_name=$(echo "$relative_path" | tr '/' '.')
     

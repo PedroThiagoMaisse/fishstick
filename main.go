@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/PedroThiagoMaisse/fishstick/commands/notify"
-	"github.com/PedroThiagoMaisse/fishstick/commands/test"
+	"github.com/PedroThiagoMaisse/fishstick/cmd/notify"
+	"github.com/PedroThiagoMaisse/fishstick/cmd/test"
 )
 
 func main() {
